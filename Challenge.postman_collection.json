@@ -1,0 +1,1254 @@
+{
+	"info": {
+		"_postman_id": "63bf948e-656a-4530-bc1e-120c0784304d",
+		"name": "Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Characters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/characters",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"characters"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "646"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"286-aAwgLJ0LJ/vTCsJ5xrq4Rjiod2Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 00:43:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"name\": \"Yamil\",\n        \"img\": \"npm.jpg\",\n        \"movies\": [\n            {\n                \"id\": 2,\n                \"title\": \"Ferguson\",\n                \"img\": \"asd\",\n                \"rating\": 2,\n                \"createdAt\": \"2021-09-24T10:57:54.000Z\",\n                \"updatedAt\": \"2021-09-24T10:57:54.000Z\",\n                \"character_movies\": {\n                    \"createdAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"updatedAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"characterId\": 1,\n                    \"movieId\": 2\n                }\n            }\n        ]\n    },\n    {\n        \"name\": \"Yamil\",\n        \"img\": \"npm.jpg\",\n        \"movies\": [\n            {\n                \"id\": 2,\n                \"title\": \"Ferguson\",\n                \"img\": \"asd\",\n                \"rating\": 2,\n                \"createdAt\": \"2021-09-24T10:57:54.000Z\",\n                \"updatedAt\": \"2021-09-24T10:57:54.000Z\",\n                \"character_movies\": {\n                    \"createdAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"updatedAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"characterId\": 2,\n                    \"movieId\": 2\n                }\n            }\n        ]\n    },\n    {\n        \"name\": \"Yamil\",\n        \"img\": \"npm.jpg\",\n        \"movies\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Pedro",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "24",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"value": "pedro.jpg",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "movie",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Characters",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Pedro",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "24",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "pedro.jpg",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "movie",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/characters",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"characters"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Pedro",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11-1OI4h2hg3uS6gRFXT3TE3tAduaQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 00:42:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Character created"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Gustavo",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"value": "gustavo.png",
+									"type": "text"
+								},
+								{
+									"key": "weigth",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "movie",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "history",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/characters/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Gustavo",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "gustavo.png",
+											"type": "text"
+										},
+										{
+											"key": "weigth",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "movie",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "history",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "30",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/characters/100",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"characters",
+										"100"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-K3fqP39Q/GoNTqJI0L9Kqk84R+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 00:57:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Cant find id"
+						},
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Gustavo",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "gustavo.png",
+											"type": "text"
+										},
+										{
+											"key": "weigth",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "movie",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "history",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "30",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/characters/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"characters",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3-9imuRLez3P7URNNj5ibt9BHsaag\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 01:01:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    1\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/characters/21",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters",
+								"21"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/characters/21",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"characters",
+										"21"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1-NWoZK3kTsExUV00Ywo1G5jlUKKs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 01:04:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/characters/1/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters",
+								"1",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Movies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/characters/1/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"characters",
+										"1",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"101-JEaaNnrSurm6A1xsvzBKo3ZvYqY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 01:10:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"title\": \"Ferguson\",\n        \"img\": \"asd\",\n        \"rating\": 2,\n        \"createdAt\": \"2021-09-24T10:57:54.000Z\",\n        \"updatedAt\": \"2021-09-24T10:57:54.000Z\",\n        \"character_movies\": {\n            \"createdAt\": \"2021-09-22T00:42:04.000Z\",\n            \"updatedAt\": \"2021-09-22T00:42:04.000Z\",\n            \"characterId\": 1,\n            \"movieId\": 2\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Movies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "674"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a2-lJGNqCNeIPUlHVzzGhHARfcYa2U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 01:12:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"Ferguson\",\n        \"img\": \"asd\",\n        \"createdAt\": \"2021-09-24T10:57:54.000Z\",\n        \"characters\": [\n            {\n                \"id\": 1,\n                \"img\": \"npm.jpg\",\n                \"name\": \"Yamil\",\n                \"age\": 30,\n                \"weight\": 80,\n                \"history\": \"welcome to usa\",\n                \"createdAt\": \"2021-09-26T15:18:43.000Z\",\n                \"updatedAt\": \"2021-09-27T01:01:40.000Z\",\n                \"character_movies\": {\n                    \"createdAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"updatedAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"characterId\": 1,\n                    \"movieId\": 2\n                }\n            },\n            {\n                \"id\": 2,\n                \"img\": \"npm.jpg\",\n                \"name\": \"Yamil\",\n                \"age\": 30,\n                \"weight\": 80,\n                \"history\": \"welcome to usa\",\n                \"createdAt\": \"2021-09-26T15:19:43.000Z\",\n                \"updatedAt\": \"2021-09-26T15:19:43.000Z\",\n                \"character_movies\": {\n                    \"createdAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"updatedAt\": \"2021-09-22T00:42:04.000Z\",\n                    \"characterId\": 2,\n                    \"movieId\": 2\n                }\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "One Hundred Miles",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"value": "OHM_preview.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insert",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "One Hundred Miles",
+											"type": "text"
+										},
+										{
+											"key": "rating",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "OHM_preview.jpg",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "13"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d-Pmp8DgrCVxmVAh4hejtV26gcHSc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 01:15:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Movie created"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "OHM",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/movies/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/movies/14",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"14"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/movies/14",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies",
+										"14"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-K3fqP39Q/GoNTqJI0L9Kqk84R+U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 01:32:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Cant find id"
+						},
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/movies/14",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies",
+										"14"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1-NWoZK3kTsExUV00Ywo1G5jlUKKs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 01:32:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "Genders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/movies/2/genders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"2",
+								"genders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/movies/1/genders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies",
+										"1",
+										"genders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-0ELc+RDp6vL5XcLh7fnjb2o9Paw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 02:22:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Cant get id"
+						},
+						{
+							"name": "Genders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/movies/2/genders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies",
+										"2",
+										"genders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-TBcarSLiRAkSLDyDvklGcnmdPJc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 02:25:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"DRAMA\",\n        \"img\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null,\n        \"movie_gender\": {\n            \"createdAt\": null,\n            \"updatedAt\": null,\n            \"genderId\": 1,\n            \"movieId\": 2\n        }\n    },\n    {\n        \"id\": 2,\n        \"name\": \"HORROR\",\n        \"img\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null,\n        \"movie_gender\": {\n            \"createdAt\": null,\n            \"updatedAt\": null,\n            \"genderId\": 2,\n            \"movieId\": 2\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"yamil123_1@live.com\",\r\n    \"password\": 123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"yamil123_1@live.com\",\r\n    \"password\": 123456\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "200"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c8-sJE2Yooxt0VtaWheb1CgPORQeYc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Sep 2021 21:10:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwiLCJpYXQiOjE2MzI3NzcwNDQsImV4cCI6MTYzMjc5ODY0NH0.TETujZTkim6Ji5Hz9GL1ZEs38_nRtinFL1hkoebLQ7M\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "yamil123_1@live.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Yamil Martinez",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -40,7 +40,7 @@ router.route('/register')
         const newuser = await db.Users.create({
             email, password: md5(password), name
         });
-        if(newuser == 0) throw new Error("Sorry, sometime went wrong. Try later");
+        if(newuser == 0) throw new Error("Sorry, something went wrong. Try later");
         const senderEmail = 'yamilm61@gmail.com';
         const senderName = 'Yamil Martinez';
         await sendEmail(senderEmail, senderName, email, name, 'Confirmacion de cuenta');

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {    
+  "scripts": {
     "dev": "npx nodemon server.js",
     "test": "mocha test/*.js --timeout 15000"
   },
@@ -23,6 +23,7 @@
     "sequelize": "^6.6.5",
     "sequelize-cli": "^6.2.0",
     "sib-api-v3-sdk": "^8.2.1",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "wait-port": "^0.2.9"
   }
 }

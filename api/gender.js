@@ -1,9 +1,10 @@
 const db = require('../models');
 const express = require('express');
 const character = require('../models/character');
+const verifyToken = require('../middleware/authtoken');
 const router = express.Router();
 
-router.route('/')
+router.route('/', verifyToken)
 .get(async (req, res) => {
     try {
         const users = await db.character.findAll({            

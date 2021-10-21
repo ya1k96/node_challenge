@@ -1,8 +1,9 @@
 const db = require('../models');
 const express = require('express');
+const verifyToken = require('../middleware/authtoken');
 const router = express.Router();
 
-router.route('/')
+router.route('/', verifyToken)
 .get(async (req, res) => {    
     try {        
        const result = await db.character.findAll({  
@@ -34,7 +35,7 @@ router.route('/')
     }
 });
 
-router.route('/:id')
+router.route('/:id', verifyToken)
 .put(async (req, res) => {
     const id = req.params.id;
 
@@ -79,7 +80,7 @@ router.route('/:id')
     }
 });
 
-router.route('/:id/movies')
+router.route('/:id/movies', verifyToken)
 .get((req, res) => {
     const id = req.params.id;
     db.character.findByPk(id).then(character => {

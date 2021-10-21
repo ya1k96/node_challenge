@@ -1,8 +1,9 @@
 const db = require('../models');
 const express = require('express');
+const verifyToken = require('../middleware/authtoken');
 const router = express.Router();
 
-router.route('/')
+router.route('/', verifyToken)
 .get(async (req, res) => {
     try {
         const users = await db.movie.findAll({   
@@ -31,7 +32,7 @@ router.route('/')
         res.status(400).send(error.message);        
     }
 });
-router.route('/:id')
+router.route('/:id', verifyToken)
 .put(async (req, res) => {
     const id = req.params.id;
     
@@ -70,7 +71,7 @@ router.route('/:id')
         res.status(400).send(error.message);
     }
 });
-router.route('/:id/genders')
+router.route('/:id/genders', verifyToken)
 .get( async (req, res) => {
     const id = req.params.id;
     try {

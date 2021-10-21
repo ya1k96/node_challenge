@@ -11,7 +11,7 @@ const sendEmail = (senderEmail, senderName, toEmail, toName, subject) => {
       "sender":{ "email": senderEmail, "name": senderName},
       'replyTo' : {'email':'api@sendinblue.com', 'name':'Sendinblue'},
       'to' : [{'name': toName, 'email': toEmail}],
-      'htmlContent' : '<html><body><h1>This is a transactional email {{params.bodyMessage}}</h1></body></html>',
+      'htmlContent' : '<html><body><h1>Te enviamos una confirmacion para tu correo.</h1></body></html>',
       'params' : {'bodyMessage':'Made just for you!'}
     }
    );   

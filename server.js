@@ -7,6 +7,7 @@ const movieRoute = require('./api/movie');
 const authRoute = require('./api/auth');
 
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 app.use('/api/characters', characterRoute);
 app.use('/api/movies', movieRoute);

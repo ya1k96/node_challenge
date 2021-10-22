@@ -8,15 +8,14 @@ const verifyToken = (req, res, next) => {
         const token = bearerheader.split(" ")[1];    
         jwt.verify(token, process.env.KEY, (err, authData) => {
             if (err) {
-                res.status(403).json({message: "token expired"});                
+                return res.status(403).json({message: "token expired"});                
             } else {
                 req.authData = authData;
                 next();
             }
-        });
-        next();
+        });        
     } else {
-        res.status(403).json({message: "Token is required"});
+        return res.status(403).json({message: "Token is required"});
     }
 }
 

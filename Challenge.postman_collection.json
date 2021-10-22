@@ -11,6 +11,16 @@
 				{
 					"name": "Characters",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -84,6 +94,16 @@
 				{
 					"name": "Insert",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -224,6 +244,16 @@
 				{
 					"name": "Update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -265,7 +295,7 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/characters/1",
+							"raw": "localhost:3000/api/characters/100",
 							"host": [
 								"localhost"
 							],
@@ -273,103 +303,11 @@
 							"path": [
 								"api",
 								"characters",
-								"1"
+								"100"
 							]
 						}
 					},
 					"response": [
-						{
-							"name": "Error",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "name",
-											"value": "Gustavo",
-											"type": "text"
-										},
-										{
-											"key": "img",
-											"value": "gustavo.png",
-											"type": "text"
-										},
-										{
-											"key": "weigth",
-											"value": "",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "movie",
-											"value": "",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "history",
-											"value": "",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "age",
-											"value": "30",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "localhost:3000/api/characters/100",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"characters",
-										"100"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "12"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"c-K3fqP39Q/GoNTqJI0L9Kqk84R+U\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 27 Sep 2021 00:57:05 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "Cant find id"
-						},
 						{
 							"name": "Update",
 							"originalRequest": {
@@ -461,12 +399,114 @@
 							],
 							"cookie": [],
 							"body": "[\n    1\n]"
+						},
+						{
+							"name": "Update error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Gustavo",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "gustavo.png",
+											"type": "text"
+										},
+										{
+											"key": "weigth",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "movie",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "history",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "30",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/characters/100",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"characters",
+										"100"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-WdhYxTVBE99oMjz+JqX+s9KbY/w\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Oct 2021 04:23:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Cant find id\"\n}"
 						}
 					]
 				},
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -542,6 +582,16 @@
 				{
 					"name": "Movies",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -616,6 +666,29 @@
 						}
 					]
 				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -624,6 +697,16 @@
 				{
 					"name": "Movies",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -697,6 +780,16 @@
 				{
 					"name": "Insert",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -810,6 +903,16 @@
 				{
 					"name": "Update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -835,7 +938,7 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/movies/1",
+							"raw": "localhost:3000/api/movies/2",
 							"host": [
 								"localhost"
 							],
@@ -843,15 +946,178 @@
 							"path": [
 								"api",
 								"movies",
-								"1"
+								"2"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "OHM",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "rating",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/movies/100",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies",
+										"100"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-WdhYxTVBE99oMjz+JqX+s9KbY/w\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Oct 2021 04:24:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Cant find id\"\n}"
+						},
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "OHM",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "rating",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/movies/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3-9imuRLez3P7URNNj5ibt9BHsaag\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Oct 2021 04:25:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    1\n]"
+						}
+					]
 				},
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -981,10 +1247,20 @@
 				{
 					"name": "Genders",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/movies/2/genders",
+							"raw": "localhost:3000/api/movies/1/genders",
 							"host": [
 								"localhost"
 							],
@@ -992,67 +1268,12 @@
 							"path": [
 								"api",
 								"movies",
-								"2",
+								"1",
 								"genders"
 							]
 						}
 					},
 					"response": [
-						{
-							"name": "Error",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "localhost:3000/api/movies/1/genders",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"movies",
-										"1",
-										"genders"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "html",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "text/html; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "11"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"b-0ELc+RDp6vL5XcLh7fnjb2o9Paw\""
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 27 Sep 2021 02:22:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "Cant get id"
-						},
 						{
 							"name": "Genders",
 							"originalRequest": {
@@ -1107,8 +1328,93 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"DRAMA\",\n        \"img\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null,\n        \"movie_gender\": {\n            \"createdAt\": null,\n            \"updatedAt\": null,\n            \"genderId\": 1,\n            \"movieId\": 2\n        }\n    },\n    {\n        \"id\": 2,\n        \"name\": \"HORROR\",\n        \"img\": null,\n        \"createdAt\": null,\n        \"updatedAt\": null,\n        \"movie_gender\": {\n            \"createdAt\": null,\n            \"updatedAt\": null,\n            \"genderId\": 2,\n            \"movieId\": 2\n        }\n    }\n]"
+						},
+						{
+							"name": "Genders error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/movies/1/genders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"movies",
+										"1",
+										"genders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-rQedO/nskQWRPRGtfq08a9GHrQk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Oct 2021 04:26:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Cant get id\"\n}"
 						}
 					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbWlsMTIzXzFAbGl2ZS5jb20iLCJuYW1lIjoiWWFtaWwgTWFydGluZXoiLCJpYXQiOjE2MzQ4NzU5NDIsImV4cCI6MTYzNDg5NzU0Mn0.1MEW30D9FExn69GlzpVGZmkpHB-WnIR-EwFDQTekAoY",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -1218,7 +1524,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "yamil123_1@live.com",
+									"value": "yamilm61@gmail.com   ",
 									"type": "text"
 								},
 								{
@@ -1246,7 +1552,157 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Register error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "yamil123_1@live.com   ",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Yamil Martinez",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-3FclxkkpEO5RG09O396prp3X7aA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Oct 2021 04:40:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"value\": \"yamil123_1@live.com\",\n            \"msg\": \"E-mail already in use\",\n            \"param\": \"email\",\n            \"location\": \"body\"\n        },\n        {\n            \"msg\": \"Field required\",\n            \"param\": \"name\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "yamilm61@gmail.com   ",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Yamil Martinez",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-SocIpdGSgJCsBYVb18cs9EeGgxU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Oct 2021 04:40:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Usuario creado\"\n}"
+						}
+					]
 				}
 			]
 		}

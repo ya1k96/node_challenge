@@ -13,7 +13,7 @@ router.route('/', verifyToken)
         });
         res.json(result);
     } catch (error) {        
-        res.status(400).send('Sorry, an error occurred');                
+        res.status(400).json({message: 'Sorry, an error occurred'});                
     }
 })
 .post(async (req, res) => {
@@ -29,9 +29,9 @@ router.route('/', verifyToken)
             img, name, age, weight, history, movie
         });
         if(newCharacter == 0) throw new Error("Sorry, an error occurred");
-        res.status(200).send('Character created');
+        res.status(200).json({message: 'Character created'});
     } catch (error) {
-        res.status(400).send(error.meesage);        
+        res.status(400).json({message: error.meesage});        
     }
 });
 
@@ -54,7 +54,7 @@ router.route('/:id', verifyToken)
         if(character == 0) throw new Error("Cant find id");
         res.status(201).json(character);
     } catch (error) {               
-        res.status(400).send(error.message);
+        res.status(400).json({message: error.message});
     }    
 })
 .get(async (req, res) => {
@@ -64,7 +64,7 @@ router.route('/:id', verifyToken)
         const character = await db.character.findByPk(id, {include: 'movies'});
         res.json(character);
     } catch (error) {
-        res.status(400).send("An error ocurred");
+        res.status(400).json({message: "An error ocurred"});
     }
     
 })
@@ -76,18 +76,24 @@ router.route('/:id', verifyToken)
         if(character == 0) throw new Error("Cant find id");
         res.json(character);
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(400).json({message: error.message});
     }
 });
 
 router.route('/:id/movies', verifyToken)
 .get((req, res) => {
     const id = req.params.id;
-    db.character.findByPk(id).then(character => {
-        character.getMovies().then(movies => {
-            res.json(movies);
-        })
-    });
+    try {
+        db.character.findByPk(id).then(character => {
+            character.getMovies().then(movies => {
+                res.json(movies);
+            })
+        });
+        
+    } catch (error) {
+        res.status(400).json({message: error.message});
+        
+    }
 });
 
 module.exports = router;

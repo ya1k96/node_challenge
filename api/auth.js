@@ -10,22 +10,22 @@ router.route('/login')
 .post(async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log(req.body)
+    
     try {
         const user = await db.Users.findOne({where: {email}});
-        if(!user) {
-            res.status(204).send("User not found");
-        }
+        
+        if(user === null) return res.status(400).json({message: "User not found"});        
+
         if(md5(password) === user.password) {
             const data = {email, name: user.name}
             const token = jwt.sign(data, process.env.KEY, { expiresIn: '6h' });
 
-            res.status(200).json({token});
+            return res.status(200).json({token});
         } else {
             throw new Error("Invalid credentials");
         }
     } catch (error) {
-        res.status(400).send(error.message);                
+        return res.status(400).json({message: error.message});                
     }
 
 });
@@ -44,9 +44,9 @@ router.route('/register')
         const senderEmail = 'yamilm61@gmail.com';
         const senderName = 'Yamil Martinez';
         await sendEmail(senderEmail, senderName, email, name, 'Confirmacion de cuenta');
-        res.status(200).send('Usuario creado');        
+        res.status(200).json({message: 'Usuario creado'});        
     } catch (error) {               
-        res.status(400).send(error.message);        
+        res.status(400).json({message: error.message});        
     }
 });
 

@@ -13,7 +13,7 @@ router.route('/', verifyToken)
     } catch (error) {
 
         console.log(error)
-        res.status(400).send('Sorry, an error occurred');                
+        res.status(400).json({message: 'Sorry, an error occurred'});                
     }
 })
 .post((req, res) => {
@@ -24,9 +24,9 @@ router.route('/', verifyToken)
         db.gender.create({
             img, name
         });
-        res.status(200).send('Gender created');
+        res.status(200).json({message: 'Gender created'});
     } catch (error) {
-        res.status(400).send('Sorry, an error occurred');        
+        res.status(400).json({message: 'Sorry, an error occurred'});        
     }
 });
 

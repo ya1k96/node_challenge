@@ -12,9 +12,7 @@ router.route('/', verifyToken)
         });
         res.status(200).json(users);
     } catch (error) {
-
-        console.log(error)
-        res.status(400).send('Sorry, an error occurred');                
+        res.status(400).json({message: 'Sorry, an error occurred'});                
     }
 })
 .post(async (req, res) => {
@@ -27,9 +25,9 @@ router.route('/', verifyToken)
             img, rating, title
         });
         if(newMovie == 0) throw new Error("Sorry, an error occurred");
-        res.status(200).send('Movie created');
+        res.status(200).json({message: 'Movie created'});
     } catch (error) {
-        res.status(400).send(error.message);        
+        res.status(400).json({message: error.message});        
     }
 });
 router.route('/:id', verifyToken)
@@ -47,7 +45,7 @@ router.route('/:id', verifyToken)
         if(movie == 0) throw new Error("Cant find id");
         res.json(movie);
     } catch (error) {
-        res.status(400).send(error.message);        
+        res.status(400).json({message: error.message});        
     }    
 }).get(async (req, res) => {
     const id = req.params.id;
@@ -56,7 +54,7 @@ router.route('/:id', verifyToken)
         const movie = await db.movie.findByPk(id, {include: 'characters'});
         res.json(movie);
     } catch (error) {
-        res.status(400).send("An error ocurred");
+        res.status(400).json({message: "An error ocurred"});
     }
     
 })
@@ -68,7 +66,7 @@ router.route('/:id', verifyToken)
         if(movie == 0) throw new Error("Cant find id");
         res.json(movie);
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(400).json({message: error.message});
     }
 });
 router.route('/:id/genders', verifyToken)
@@ -83,7 +81,7 @@ router.route('/:id/genders', verifyToken)
         })
         
     } catch (error) {
-        res.status(400).send(error.message);        
+        res.status(400).json({message: error.message});        
     }
 });
 

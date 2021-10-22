@@ -6,6 +6,7 @@ const db = require("../models");
 const md5 = require('md5');
 const sendEmail = require('../bulkSend');
 require('dotenv').config();
+const { v4: uuidv4 } = require('uuid');
 
 router.route('/login')
 .post(async (req, res) => {
@@ -42,8 +43,8 @@ router.route('/register')
     .withMessage('Valid email required'),
     check('email').custom(async value => {
         const user = await db.Users.findOne({where: {email: value}})                
-        if(user !== null && value) {
-            return Promise.reject('');
+        if(user !== null) {
+            return Promise.reject('E-mail already in use');
         }
                
       }) //Verifacmos si el correo se encuentra en uso
@@ -60,8 +61,7 @@ router.route('/register')
     async (req, res) => {
     const email = req.body.email;
     const name = req.body.name;
-    const password = req.body.password;
-
+    const password = req.body.password;    
     //Obtenemos los errores del formulario
     const errors = validationResult(req);
     
@@ -71,8 +71,11 @@ router.route('/register')
     
     try {
         
+        const token = uuidv4();
         const newuser = await db.Users.create({
-            email, password: md5(password), name
+            email, password: md5(password), name, age,
+            valdation_token: token,
+            valid_email: false
         });
 
         if(newuser == 0) throw new Error("Sorry, something went wrong. Try later");
@@ -80,7 +83,8 @@ router.route('/register')
         //Preparamos para enviar el correo de confirmacion
         const senderEmail = 'yamilm61@gmail.com';
         const senderName = 'Yamil Martinez';
-        await sendEmail(senderEmail, senderName, email, name, 'Confirmacion de cuenta');
+        const body = `<h3>Confirmacion de cuenta</h3>\n ingresa al siguiente link para confirmar tu cuenta <a href="${req.hostname}/verifyUser?token=${token}&email=${email}">Go</a>`;
+        await sendEmail(senderEmail, senderName, email, name, body);
 
         res.status(200).json({message: 'Usuario creado'});        
     } catch (error) {        
@@ -88,5 +92,21 @@ router.route('/register')
         res.status(400).json({message: error.message});        
     }
 });
+router.route('/verifyUser')
+.get(async (req, res) => {
+    const email = req.params.email;
+    const token = req.params.token;
 
+    try {
+        const user = await db.Users.findOne({where: {email}});  
+        if(user!== null && user.valdation_token === token) { 
+            return res.json().json({message: "Usuario confirmado con exito!"});           
+        } else {
+            throw new Error("Ha ocurrido un error. Conectate con el administrador");
+        }
+
+    } catch (error) {
+        res.status(400).json({message: error.message});                
+    }
+});
 module.exports = router;

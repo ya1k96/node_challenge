@@ -4,7 +4,7 @@ const verifyToken = require('../middleware/authtoken');
 const router = express.Router();
 
 router.route('/', verifyToken)
-.get(async (req, res) => {
+.get(verifyToken, async (req, res) => {
     try {
         const users = await db.movie.findAll({   
             attributes: ['title','img','createdAt'],
@@ -15,7 +15,7 @@ router.route('/', verifyToken)
         res.status(400).json({message: 'Sorry, an error occurred'});                
     }
 })
-.post(async (req, res) => {
+.post(verifyToken, async (req, res) => {
     const img    = req.body.img;
     const title  = req.body.title;
     const rating = req.body.rating;
@@ -31,7 +31,7 @@ router.route('/', verifyToken)
     }
 });
 router.route('/:id', verifyToken)
-.put(async (req, res) => {
+.put(verifyToken, async (req, res) => {
     const id = req.params.id;
     
     const data = {
@@ -47,7 +47,7 @@ router.route('/:id', verifyToken)
     } catch (error) {
         res.status(400).json({message: error.message});        
     }    
-}).get(async (req, res) => {
+}).get(verifyToken, async (req, res) => {
     const id = req.params.id;
 
     try {
@@ -58,7 +58,7 @@ router.route('/:id', verifyToken)
     }
     
 })
-.delete(async (req, res) => {
+.delete(verifyToken, async (req, res) => {
     const id = req.params.id;
     
     try {
@@ -70,7 +70,7 @@ router.route('/:id', verifyToken)
     }
 });
 router.route('/:id/genders', verifyToken)
-.get( async (req, res) => {
+.get( verifyToken, async (req, res) => {
     const id = req.params.id;
     try {
         const movie = await db.movie.findByPk(id);

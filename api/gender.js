@@ -5,7 +5,7 @@ const verifyToken = require('../middleware/authtoken');
 const router = express.Router();
 
 router.route('/', verifyToken)
-.get(async (req, res) => {
+.get(verifyToken, async (req, res) => {
     try {
         const users = await db.character.findAll({            
         });
@@ -16,7 +16,7 @@ router.route('/', verifyToken)
         res.status(400).json({message: 'Sorry, an error occurred'});                
     }
 })
-.post((req, res) => {
+.post(verifyToken, (req, res) => {
     const img     = req.body.img;
     const name    = req.body.name;
 
